@@ -9,7 +9,7 @@ import UIKit
 
 public class ValueCell: UICollectionViewCell {
     let label = UILabel()
-    static let reuseIdentifier = "value-cell-reuse-identifier"
+    public static let reuseIdentifier = "value-cell-reuse-identifier"
 
     override init(frame: CGRect) {
         super.init(frame: frame)

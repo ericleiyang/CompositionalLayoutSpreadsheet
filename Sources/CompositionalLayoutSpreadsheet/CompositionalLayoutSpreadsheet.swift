@@ -66,7 +66,7 @@ public class CompositionalLayoutSpreadsheet {
     let cellBackgroundColor: UIColor
     let stickyCellBackgroundColor: UIColor
     
-    init(
+    public init(
         spreadsheetBackgroundColor: UIColor = .white,
         cellWidth: CGFloat = 100,
         cellHeight: CGFloat = 44,
@@ -89,7 +89,7 @@ public class CompositionalLayoutSpreadsheet {
     private var cellReuseIdentifier: String?
 
     // update data
-    func update(
+    public func update(
         stikyColumnDatas: [NSAttributedString],
         rowDatas: [[NSAttributedString]]
     ) {
@@ -107,7 +107,7 @@ public class CompositionalLayoutSpreadsheet {
         )
     }
     
-    func configureHierarchy(
+    public func configureHierarchy(
         stikyColumnDatas: [NSAttributedString],
         rowDatas: [[NSAttributedString]],
         parentView: UIView,

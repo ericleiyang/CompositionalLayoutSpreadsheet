@@ -17,28 +17,42 @@ class ViewController: UIViewController {
         provider.configureHierarchy(
             stikyColumnDatas: stikyColumnDatas,
             rowDatas: rowDatas,
-            parentView: view,
-            cell: ValueCell.self,
-            cellReuseIdentifier: ValueCell.reuseIdentifier
+            parentView: view
         )
     }
 }
 
 extension ViewController {
-    var stikyColumnDatas: [String] {
-        var data: [String] = []
+    var stikyColumnDatas: [NSAttributedString] {
+        var data: [NSAttributedString] = []
         for index in 0..<50 {
-            data.append("row \(index)")
+            let attributedText = NSAttributedString(
+                string: "row \(index)",
+                attributes: [
+                    .font : UIFont.systemFont(ofSize: 16),
+                    .foregroundColor: UIColor.lightGray,
+                    .paragraphStyle: NSTextAlignment.center
+                ]
+            )
+            data.append(attributedText)
         }
         return data
     }
-    var rowDatas: [[String]] {
-        var dataCollections: [[String]] = []
+    var rowDatas: [[NSAttributedString]] {
+        var dataCollections: [[NSAttributedString]] = []
 
         for row in 0..<50 {
-            var data: [String] = []
+            var data: [NSAttributedString] = []
             for column in 0..<20 {
-                data.append("data \(row),\(column)")
+                let attributedText = NSAttributedString(
+                    string: "data \(row),\(column)",
+                    attributes: [
+                        .font : UIFont.systemFont(ofSize: 16),
+                        .foregroundColor: UIColor.lightGray,
+                        .paragraphStyle: NSTextAlignment.center
+                    ]
+                )
+                data.append(attributedText)
             }
             dataCollections.append(data)
         }
