@@ -30,8 +30,7 @@ extension ViewController {
                 string: "row \(index)",
                 attributes: [
                     .font : UIFont.systemFont(ofSize: 16),
-                    .foregroundColor: UIColor.lightGray,
-                    .paragraphStyle: NSTextAlignment.center
+                    .foregroundColor: UIColor.black
                 ]
             )
             data.append(attributedText)
@@ -48,8 +47,7 @@ extension ViewController {
                     string: "data \(row),\(column)",
                     attributes: [
                         .font : UIFont.systemFont(ofSize: 16),
-                        .foregroundColor: UIColor.lightGray,
-                        .paragraphStyle: NSTextAlignment.center
+                        .foregroundColor: UIColor.lightGray
                     ]
                 )
                 data.append(attributedText)

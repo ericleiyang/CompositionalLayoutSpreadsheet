@@ -22,7 +22,7 @@ public class ValueCell: UICollectionViewCell {
 
 extension ValueCell {
     func configure(
-        text: NSAttributedString,
+        attributedText: NSAttributedString,
         backgroundColor: UIColor,
         borderWith: CGFloat,
         borderColor: UIColor
@@ -34,6 +34,8 @@ extension ValueCell {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
+        label.attributedText = attributedText
+        label.textAlignment = .center
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

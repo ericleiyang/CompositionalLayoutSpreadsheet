@@ -24,7 +24,7 @@ public class CompositionalLayoutSpreadsheet {
      */
     private var stikyColumnDatas: [NSAttributedString] = [] {
         didSet {
-            stickyColumnCellDatas = stikyColumnDatas.compactMap{ CellData(title: $0) }
+            stickyColumnCellDatas = stikyColumnDatas.compactMap{ CellData(attributedText: $0) }
         }
     }
     private var stickyColumnCellDatas: [CellData] = []
@@ -50,7 +50,7 @@ public class CompositionalLayoutSpreadsheet {
                     flatArray.append(rowDatas[row][column])
                 }
             }
-            let cellDatas = flatArray.compactMap{ CellData(title: $0) }
+            let cellDatas = flatArray.compactMap{ CellData(attributedText: $0) }
             sectionData = SectionData(cells: cellDatas)
         }
     }
@@ -167,7 +167,7 @@ public class CompositionalLayoutSpreadsheet {
                 return nil
             }
             cell.configure(
-                text: data.title,
+                attributedText: data.attributedText,
                 backgroundColor: self.cellBackgroundColor,
                 borderWith: self.cellBorderWidth,
                 borderColor: self.cellBorderColor

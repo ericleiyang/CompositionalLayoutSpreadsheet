@@ -37,7 +37,7 @@ class StickColumnView: UICollectionReusableView {
             )
             let stickyCell = StickyCellView(frame: frame)
             stickyCell.configure(
-                attributedText: stickyColumnDatas[index].title,
+                attributedText: stickyColumnDatas[index].attributedText,
                 backgroundColor: stickyCellBackgroundColor,
                 borderWith: stickyCellBorderWidth,
                 borderColor: stickyCellBorderColor
