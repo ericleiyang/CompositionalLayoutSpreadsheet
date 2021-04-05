@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValueCell: UICollectionViewCell {
+public class ValueCell: UICollectionViewCell {
     let label = UILabel()
     static let reuseIdentifier = "value-cell-reuse-identifier"
 

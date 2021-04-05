@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompositionalLayoutSpreadsheet {
+public class CompositionalLayoutSpreadsheet {
     // MARK: DATA
     
     /**
@@ -111,8 +111,8 @@ class CompositionalLayoutSpreadsheet {
         stikyColumnDatas: [NSAttributedString],
         rowDatas: [[NSAttributedString]],
         parentView: UIView,
-        cell: UICollectionViewCell.Type,
-        cellReuseIdentifier: String
+        cell: UICollectionViewCell.Type = ValueCell.self,
+        cellReuseIdentifier: String = ValueCell.reuseIdentifier
     ) {
         self.stikyColumnDatas = stikyColumnDatas
         self.rowDatas = rowDatas
