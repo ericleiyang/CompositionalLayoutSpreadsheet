@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CompositionalLayoutSpreadsheet",
+        "repositoryURL": "https://github.com/ericleiyang/CompositionalLayoutSpreadsheet",
+        "state": {
+          "branch": null,
+          "revision": "89034315094fc8592feb1838613ff63684e6fc87",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

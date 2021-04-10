@@ -39,5 +39,6 @@ class StickyCellView: UIView {
             label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         label.attributedText = attributedText
+        label.textAlignment = .center
     }
 }

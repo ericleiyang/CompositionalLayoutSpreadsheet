@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F552CD15261ADB43006E34C5 /* CompositionalLayoutSpreadsheet in Frameworks */ = {isa = PBXBuildFile; productRef = F552CD14261ADB43006E34C5 /* CompositionalLayoutSpreadsheet */; };
 		F566A2EE26185FF600274523 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A2ED26185FF600274523 /* AppDelegate.swift */; };
 		F566A2F026185FF600274523 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A2EF26185FF600274523 /* SceneDelegate.swift */; };
 		F566A2F226185FF600274523 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F566A2F126185FF600274523 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F552CD15261ADB43006E34C5 /* CompositionalLayoutSpreadsheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = CompositionalLayoutSpreadsheetExample;
+			packageProductDependencies = (
+				F552CD14261ADB43006E34C5 /* CompositionalLayoutSpreadsheet */,
+			);
 			productName = CompositionalLayoutSpreadsheetExample;
 			productReference = F566A2EA26185FF600274523 /* CompositionalLayoutSpreadsheetExample.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = F566A2E126185FF600274523;
+			packageReferences = (
+				F552CD13261ADB43006E34C5 /* XCRemoteSwiftPackageReference "CompositionalLayoutSpreadsheet" */,
+			);
 			productRefGroup = F566A2EB26185FF600274523 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F552CD13261ADB43006E34C5 /* XCRemoteSwiftPackageReference "CompositionalLayoutSpreadsheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ericleiyang/CompositionalLayoutSpreadsheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F552CD14261ADB43006E34C5 /* CompositionalLayoutSpreadsheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F552CD13261ADB43006E34C5 /* XCRemoteSwiftPackageReference "CompositionalLayoutSpreadsheet" */;
+			productName = CompositionalLayoutSpreadsheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F566A2E226185FF600274523 /* Project object */;
 }

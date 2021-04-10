@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ValueCell: UICollectionViewCell {
+public class ValueCell: UICollectionViewCell {
     let label = UILabel()
-    static let reuseIdentifier = "value-cell-reuse-identifier"
+    public static let reuseIdentifier = "value-cell-reuse-identifier"
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +22,7 @@ class ValueCell: UICollectionViewCell {
 
 extension ValueCell {
     func configure(
-        text: NSAttributedString,
+        attributedText: NSAttributedString,
         backgroundColor: UIColor,
         borderWith: CGFloat,
         borderColor: UIColor
@@ -34,6 +34,8 @@ extension ValueCell {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
+        label.attributedText = attributedText
+        label.textAlignment = .center
         contentView.addSubview(label)
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

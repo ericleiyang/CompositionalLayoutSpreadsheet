@@ -8,14 +8,14 @@
 import Foundation
 
 class CellData {
-    let title: NSAttributedString
+    let attributedText: NSAttributedString
     let identifier: String
     
     init(
-        title: NSAttributedString,
+        attributedText: NSAttributedString,
         identifier: String = UUID().uuidString
     ) {
-        self.title = title
+        self.attributedText = attributedText
         self.identifier = identifier
     }
 }

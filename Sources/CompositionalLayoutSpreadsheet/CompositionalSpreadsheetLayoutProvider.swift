@@ -61,18 +61,22 @@ class CompositionalSpreadsheetLayoutProvider {
             heightDimension: .absolute(cellHeight)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
+        let horizontalGroupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(cellWidth * CGFloat(numberOfDataColumns)),
+            heightDimension: .absolute(cellHeight)
+        )
         var groups: [NSCollectionLayoutGroup] = []
         for _ in 0..<Int(numberOfDataRows) {
             let group = NSCollectionLayoutGroup.horizontal(
-                layoutSize: itemSize,
-                subitems: [item]
+                layoutSize: horizontalGroupSize,
+                subitem: item,
+                count: Int(numberOfDataColumns)
             )
             groups.append(group)
         }
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(cellWidth),
+            widthDimension: .absolute(cellWidth * (numberOfDataColumns + 1)),
             heightDimension: .absolute(columnHeight)
         )
         let group = NSCollectionLayoutGroup.vertical(
@@ -82,7 +86,7 @@ class CompositionalSpreadsheetLayoutProvider {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [stickyColumn]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: cellWidth, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: cellWidth, bottom: 0, trailing: -cellWidth)
         return UICollectionViewCompositionalLayout(section: section)
     }
 }

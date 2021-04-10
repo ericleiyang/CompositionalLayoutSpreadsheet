@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompositionalLayoutSpreadsheet {
+public class CompositionalLayoutSpreadsheet {
     // MARK: DATA
     
     /**
@@ -24,7 +24,7 @@ class CompositionalLayoutSpreadsheet {
      */
     private var stikyColumnDatas: [NSAttributedString] = [] {
         didSet {
-            stickyColumnCellDatas = stikyColumnDatas.compactMap{ CellData(title: $0) }
+            stickyColumnCellDatas = stikyColumnDatas.compactMap{ CellData(attributedText: $0) }
         }
     }
     private var stickyColumnCellDatas: [CellData] = []
@@ -43,14 +43,7 @@ class CompositionalLayoutSpreadsheet {
      */
     private var rowDatas: [[NSAttributedString]] = [] {
         didSet {
-            var flatArray: [NSAttributedString] = []
-            let columnCount = rowDatas.first?.count ?? 0
-            for column in 0..<columnCount {
-                for row in 0..<rowDatas.count {
-                    flatArray.append(rowDatas[row][column])
-                }
-            }
-            let cellDatas = flatArray.compactMap{ CellData(title: $0) }
+            let cellDatas = rowDatas.flatMap{ $0 }.map{ CellData(attributedText: $0) }
             sectionData = SectionData(cells: cellDatas)
         }
     }
@@ -66,7 +59,7 @@ class CompositionalLayoutSpreadsheet {
     let cellBackgroundColor: UIColor
     let stickyCellBackgroundColor: UIColor
     
-    init(
+    public init(
         spreadsheetBackgroundColor: UIColor = .white,
         cellWidth: CGFloat = 100,
         cellHeight: CGFloat = 44,
@@ -89,7 +82,7 @@ class CompositionalLayoutSpreadsheet {
     private var cellReuseIdentifier: String?
 
     // update data
-    func update(
+    public func update(
         stikyColumnDatas: [NSAttributedString],
         rowDatas: [[NSAttributedString]]
     ) {
@@ -107,12 +100,12 @@ class CompositionalLayoutSpreadsheet {
         )
     }
     
-    func configureHierarchy(
+    public func configureHierarchy(
         stikyColumnDatas: [NSAttributedString],
         rowDatas: [[NSAttributedString]],
         parentView: UIView,
-        cell: UICollectionViewCell.Type,
-        cellReuseIdentifier: String
+        cell: UICollectionViewCell.Type = ValueCell.self,
+        cellReuseIdentifier: String = ValueCell.reuseIdentifier
     ) {
         self.stikyColumnDatas = stikyColumnDatas
         self.rowDatas = rowDatas
@@ -167,7 +160,7 @@ class CompositionalLayoutSpreadsheet {
                 return nil
             }
             cell.configure(
-                text: data.title,
+                attributedText: data.attributedText,
                 backgroundColor: self.cellBackgroundColor,
                 borderWith: self.cellBorderWidth,
                 borderColor: self.cellBorderColor
